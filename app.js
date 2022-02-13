@@ -17,15 +17,44 @@ const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
-
-const projectName = "ace-the-loop";
+const projectName = "Ace The Loop";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
+app.locals.title = `${capitalized(projectName)}`;
 
 // 👇 Start handling routes here
 const index = require("./routes/index");
+const user = require("./routes/user");
+const scoresheet = require("./routes/scoresheet");
+
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+
+
+app.use(
+    session({
+      secret: process.env.SECRET,
+      resave: true,
+      saveUninitialized: false,
+      cookie: {
+        httpOnly: true,
+        sameSite: "lax",
+        maxAge: 600000,
+      },
+      store: MongoStore.create({
+        mongoUrl: "mongodb://localhost/ace-the-loop",
+        ttl: 600000,
+      }),
+    })
+  );
+
+
 app.use("/", index);
+app.use("/user", user);
+app.use("/scoresheet", scoresheet);
+
+
+
 
 const authRoutes = require("./routes/auth");
 app.use("/auth", authRoutes);
