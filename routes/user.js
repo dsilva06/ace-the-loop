@@ -30,7 +30,7 @@ router.post("/sign-up", (req, res, next) => {
       password: hashedPass,
     })
       .then((createdUser) => {
-        console.log("Users was created", createdUser);
+        console.log("User was created", createdUser);
   
         console.log(req.session);
   
@@ -43,5 +43,65 @@ router.post("/sign-up", (req, res, next) => {
         console.log("Something went wrong", err.errors);
       });
   });
+
+  router.get("/login", (req, res) => {
+    res.render("users/login");
+  });
+
+router.post("/login", (req, res) => {
+  let errors = [];
+
+  if (!req.body.username) {
+    errors.push("You did not include a name!");
+  }
+  if (!req.body.password) {
+    errors.push("You need a password");
+  }
+
+  if (errors.length > 0) {
+    res.json(errors);
+  }
+
+
+  User.findOne({username: req.body.username})
+  .then((foundUser)=>{
+    //   CASE 1 User is non existent
+    // HAVE TO SEND MESSAGE BACK TO USER
+
+    if(!foundUser){
+        return res.json("username not found");
+    }
+
+    // CASE 2 USERNAME IS FOUND 
+    // HAVE TO CHECK PASSWORD
+
+    const match = bcrypt.compareSync(req.body.password, foundUser.password)
+
+    //CASE 2.5 PASSWORDS DONT MATCH
+    // SEND MESSAGE TO USERS : PASSWORD DOESN'T MATCH
+
+    if(!match){
+        return res.json("Password Incorrect")
+    }
+
+    // CASE 3 EVERYTHING IS CORRECT 
+    // CREATE A SESSION FOR THE LOGGED USER
+
+    req.session.user = foundUser;
+
+    console.log(req.session.user);
+    res.json(`Welcome to our website,${req.session.username}!` )
+  })
+  .catch((err)=>{
+      console.log("Something went wrong", err);
+      res.json(err);
+  });
+});
+
+router.get("/logout", (req, res)=>{
+    req.session.destroy();
+    console.log("This session is over", req.session)
+    res.json("You have logged out");
+})
 
 module.exports = router;
