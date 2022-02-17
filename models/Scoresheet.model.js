@@ -5,14 +5,17 @@ const scoresheetSchema = new Schema(
   {
     par: {
       type: [Number],
+      enum: [3, 4, 5],
     },
     strokes: {
       type: [Number],
-      required:  [true,"you have to insert strokes made"]
+      required: [true, "you have to insert strokes made"],
     },
-    name:{
-     player: [{ type: Schema.ObjectId, ref: 'User' }]
-    }
+    holes:{
+      type:[Number]
+    },
+
+    playerID: { type: Schema.Types.ObjectId, ref: "User" },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

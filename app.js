@@ -26,6 +26,7 @@ app.locals.title = `${capitalized(projectName)}`;
 const index = require("./routes/index");
 const user = require("./routes/user");
 const scoresheet = require("./routes/scoresheet");
+const weather = require("./routes/weather");
 
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
@@ -52,6 +53,8 @@ app.use(
 app.use("/", index);
 app.use("/user", user);
 app.use("/scoresheet", scoresheet);
+app.use("/weather", weather);
+
 
 
 

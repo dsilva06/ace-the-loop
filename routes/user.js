@@ -1,11 +1,14 @@
+const User = require("../models/User.model");
 const router = require("express").Router();
+const bcrypt = require("bcrypt")
+saltRounds = 10
 
 
 router.get("/signup", (req, res, next) => {
   res.render("users/signup");
 });
 
-router.post("/sign-up", (req, res, next) => {
+router.post("/signup", (req, res, next) => {
     let errors = [];
     
     if (!req.body.username) {
@@ -26,7 +29,7 @@ router.post("/sign-up", (req, res, next) => {
   
     User.create({
       username: req.body.username,
-      username: req.body.name,
+      name: req.body.name,
       password: hashedPass,
     })
       .then((createdUser) => {
@@ -52,7 +55,7 @@ router.post("/login", (req, res) => {
   let errors = [];
 
   if (!req.body.username) {
-    errors.push("You did not include a name!");
+    errors.push("You did not include a username!");
   }
   if (!req.body.password) {
     errors.push("You need a password");
@@ -90,13 +93,17 @@ router.post("/login", (req, res) => {
     req.session.user = foundUser;
 
     console.log(req.session.user);
-    res.json(`Welcome to our website,${req.session.username}!` )
+    res.render("users/home",foundUser)
   })
   .catch((err)=>{
       console.log("Something went wrong", err);
       res.json(err);
   });
 });
+
+// router.get("user/home",(req, res)=>{
+//   res.render("users/home")
+// });
 
 router.get("/logout", (req, res)=>{
     req.session.destroy();

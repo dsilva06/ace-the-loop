@@ -1,0 +1,27 @@
+<h1>Score</h1>
+<button id="button-add"><a href="/scoresheet/create">Add Scoresheet</a></button>
+{{#each scoresheets}}
+<table>
+    <th>Hole</th>
+    <tr>{{#each this.holes}}
+        <td>{{this}}</td>
+        {{/each}}
+    </tr>
+    <th>Par</th>
+    <tr>
+        {{#each this.par}}
+        <td>{{this}}</td>
+        {{/each}}
+    </tr>
+    <th>Strokes</th>
+    <tr>
+        {{#each this.strokes}}
+        <td>{{this}}</td>
+        {{/each}}
+    </tr>
+
+
+</table>
+<button id="edit-button"><a href="/scoresheet/{{this._id}}/edit">Edit scoresheet</a></button>
+ <form action="/scoresheet/{{this.scoreSheetID}}/remove" method="POST"><button id="delete-button" type="submit">Delete</button></form>
+{{/each}}
