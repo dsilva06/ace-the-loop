@@ -40,7 +40,7 @@ router.post("/signup", (req, res, next) => {
         req.session.user = createdUser;
   
         console.log(req.session.user);
-        res.json(createdUser);
+        res.render("users/successSignin");
       })
       .catch((err) => {
         console.log("Something went wrong", err.errors);

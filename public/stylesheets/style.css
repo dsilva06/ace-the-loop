@@ -1,10 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200;300&family=Prompt:wght@300;400;500&display=swap');
+
 body {
   margin: 0;
   background-color: #00a428;
   padding: 50px;
+  font-family: 'Prompt', sans-serif;
+  background-image: url("/images/background-golf-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
 
 h1 {
   font-size: 50px;
 }
+
+.portal{
+  display: flex; 
+  justify-content: space-between;
+}
+.portal h2{
+  color: white;
+  font-size: 40px;
+  text-decoration: underline gold;
+}
+
+
+
+.signup-login{
+  align-self: center;
+}
+.signup-login a{
+  margin: 15px;
+  padding: 5px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 25px;
+  border: 5px solid gold;
+  background-color: #00a428;
+  border-radius: 10px;
+}
+.slogan{
+  display: flex;
+  height: 75vh;
+  justify-content: center;
+  align-items: center;
+}
+.slogan h1{
+  font-size: 70px;
+  color: white;
+  text-decoration: underline gold;
+}
+.signup-form form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(0, 126, 0,0.5);
+  width: 70%;
+  
+  
+  
+}
+.signup-form label{
+  color: white;
+  margin: 20px;
+  font-size: 40px;
+}
+.signup-form input{
+  width: 400px;
+  height: 40px;
+  padding: 10px;
+  background-color: #00a428;
+  border: solid 3px gold;
+  border-radius: 10px;
+}
+::placeholder {
+  color: black;
+  opacity: 1; /* Firefox */
+  font-family: 'Prompt', sans-serif;
+  font-size: 30px;
+}
+.signup-form button{
+  margin: 25px;
+  color: #ffffff;
+  font-size: 25px;
+  border: 3px solid gold;
+  background-color: #00a428;
+  border-radius: 10px;
+  padding: 10px;
+}
+.success-signup h1{
+  color: #ffffff;
+}
+.success-signup a{
+  margin: 15px;
+  padding: 5px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 25px;
+  border: 5px solid gold;
+  background-color: #00a428;
+  border-radius: 10px;
+}
+
