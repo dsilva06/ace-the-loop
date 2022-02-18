@@ -1,177 +1,209 @@
-<form action="/scoresheet/create" method="POST">
-    <table>
-        <th>HOLE</th>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-        <th><strong>IDA</strong></th>
-        <td>10</td>
-        <td>11</td>
-        <td>12</td>
-        <td>13</td>
-        <td>14</td>
-        <td>15</td>
-        <td>16</td>
-        <td>17</td>
-        <td>18</td>
-        <th>VUELTA</th>
-        <th>TOTAL</th>
-        </tr>
-        <tr>
-            <td><strong>Blue Tee</strong></td>
-            <td>480</td>
-            <td>150</td>
-            <td>359</td>
-            <td>320</td>
-            <td>348</td>
-            <td>380</td>
-            <td>337</td>
-            <td>187</td>
-            <td>323</td>
-            <td>2,884</td>
-            <td>337</td>
-            <td>291</td>
-            <td>166</td>
-            <td>309</td>
-            <td>136</td>
-            <td>518</td>
-            <td>348</td>
-            <td>383</td>
-            <td>459</td>
-            <td>3,147</td>
-            <td>6,031</td>
-        </tr>
-        <tr>
-            <td><strong>White Tee</strong></td>
-            <td>480</td>
-            <td>150</td>
-            <td>359</td>
-            <td>320</td>
-            <td>348</td>
-            <td>380</td>
-            <td>337</td>
-            <td>187</td>
-            <td>323</td>
-            <td>2,884</td>
-            <td>337</td>
-            <td>291</td>
-            <td>166</td>
-            <td>309</td>
-            <td>136</td>
-            <td>518</td>
-            <td>348</td>
-            <td>383</td>
-            <td>459</td>
-            <td>3,147</td>
-            <td>6,031</td>
-        </tr>
-        <tr>
-            <td><strong>Ocre Tee</strong></td>
-            <td>480</td>
-            <td>150</td>
-            <td>359</td>
-            <td>320</td>
-            <td>348</td>
-            <td>380</td>
-            <td>337</td>
-            <td>187</td>
-            <td>323</td>
-            <td>2,884</td>
-            <td>337</td>
-            <td>291</td>
-            <td>166</td>
-            <td>309</td>
-            <td>136</td>
-            <td>518</td>
-            <td>348</td>
-            <td>383</td>
-            <td>459</td>
-            <td>3,147</td>
-            <td>6,031</td>
-        </tr>
-        <tr>
-            <td><strong>Men's Handicap</strong></td>
-            <td>6</td>
-            <td>18</td>
-            <td>12</td>
-            <td>16</td>
-            <td>14</td>
-            <td>4</td>
-            <td>2</td>
-            <td>10</td>
-            <td>8</td>
-            <td></td>
-            <td>11</td>
-            <td>7</td>
-            <td>13</td>
-            <td>3</td>
-            <td>17</td>
-            <td>9</td>
-            <td>5</td>
-            <td>1</td>
-            <td>15</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td class="men-par"><strong>Men's Par</strong></td>
-            <td>5</td>
-            <td>3</td>
-            <td>4</td>
-            <td>4</td>
-            <td>4</td>
-            <td>4</td>
-            <td>4</td>
-            <td>3</td>
-            <td>4</td>
-            <td>35</td>
-            <td>4</td>
-            <td>4</td>
-            <td>3</td>
-            <td>4</td>
-            <td>3</td>
-            <td>5</td>
-            <td>4</td>
-            <td>4</td>
-            <td>5</td>
-            <td>36</td>
-            <td>71</td>
-        </tr>
-        <tr>
-            <td><strong>{{this.username}}</strong></td>
-            <td><input type="number" name="strokes1" min="1" /> </td>
-            <td><input type="number" name="strokes2" min="1" /></td>
-            <td><input type="number" name="strokes3" min="1" /></td>
-            <td><input type="number" name="strokes4" min="1" /></td>
-            <td><input type="number" name="strokes5" min="1" /></td>
-            <td><input type="number" name="strokes6" min="1" /></td>
-            <td><input type="number" name="strokes7" min="1" /></td>
-            <td><input type="number" name="strokes8" min="1" /></td>
-            <td><input type="number" name="strokes9" min="1" /></td>
-            <td></td>
-            <td><input type="number" name="strokes10" min="1" /></td>
-            <td><input type="number" name="strokes11" min="1" /></td>
-            <td><input type="number" name="strokes12" min="1" /></td>
-            <td><input type="number" name="strokes13" min="1" /></td>
-            <td><input type="number" name="strokes14" min="1" /></td>
-            <td><input type="number" name="strokes15" min="1" /></td>
-            <td><input type="number" name="strokes16" min="1" /></td>
-            <td><input type="number" name="strokes17" min="1" /></td>
-            <td><input type="number" name="strokes18" min="1" /></td>
-            <td></td>
-            <td></td>
-        </tr>
+<div class="create">
+    <form action="/scoresheet/create" method="POST">
+        <table>
+            <tr>
+                <th>HOLE</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <th><strong>IDA</strong></th>
+            </tr>
+            <tr>
+                <td><strong>Blue Tee</strong></td>
+                <td>480</td>
+                <td>150</td>
+                <td>359</td>
+                <td>320</td>
+                <td>348</td>
+                <td>380</td>
+                <td>337</td>
+                <td>187</td>
+                <td>323</td>
+                <td>2,884</td>
 
-    </table>
+            </tr>
+            <tr>
+                <td><strong>White Tee</strong></td>
+                <td>480</td>
+                <td>150</td>
+                <td>359</td>
+                <td>320</td>
+                <td>348</td>
+                <td>380</td>
+                <td>337</td>
+                <td>187</td>
+                <td>323</td>
+                <td>2,884</td>
 
-    <button type="submit">button</button>
-</form>
+            </tr>
+            <tr>
+                <td><strong>Ocre Tee</strong></td>
+                <td>480</td>
+                <td>150</td>
+                <td>359</td>
+                <td>320</td>
+                <td>348</td>
+                <td>380</td>
+                <td>337</td>
+                <td>187</td>
+                <td>323</td>
+                <td>2,884</td>
+
+            </tr>
+            <tr>
+                <td><strong>Men's Handicap</strong></td>
+                <td>6</td>
+                <td>18</td>
+                <td>12</td>
+                <td>16</td>
+                <td>14</td>
+                <td>4</td>
+                <td>2</td>
+                <td>10</td>
+                <td>8</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td class="men-par"><strong>Men's Par</strong></td>
+                <td>5</td>
+                <td>3</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>3</td>
+                <td>4</td>
+                <td>35</td>
+                
+            </tr>
+            <tr>
+                <td><strong>{{this.username}}</strong></td>
+                <td><input type="number" name="strokes1" min="1" /></td>
+                <td><input type="number" name="strokes2" min="1" /></td>
+                <td><input type="number" name="strokes3" min="1" /></td>
+                <td><input type="number" name="strokes4" min="1" /></td>
+                <td><input type="number" name="strokes5" min="1" /></td>
+                <td><input type="number" name="strokes6" min="1" /></td>
+                <td><input type="number" name="strokes7" min="1" /></td>
+                <td><input type="number" name="strokes8" min="1" /></td>
+                <td><input type="number" name="strokes9" min="1" /></td>
+                <td></td>
+            </tr>
+
+        </table>
+        <table>
+            <tr>
+                <th>HOLE</th>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <th>VUELTA</th>
+                <th>TOTAL</th>
+            </tr>
+            <tr>
+                <td><strong>Blue Tee</strong></td>
+                <td>337</td>
+                <td>291</td>
+                <td>166</td>
+                <td>309</td>
+                <td>136</td>
+                <td>518</td>
+                <td>348</td>
+                <td>383</td>
+                <td>459</td>
+                <td>3,147</td>
+                <td>6,031</td>
+            </tr>
+            <tr>
+                <td><strong>White Tee</strong></td>
+                <td>337</td>
+                <td>291</td>
+                <td>166</td>
+                <td>309</td>
+                <td>136</td>
+                <td>518</td>
+                <td>348</td>
+                <td>383</td>
+                <td>459</td>
+                <td>3,147</td>
+                <td>6,031</td>
+            </tr>
+            <tr>
+                <td><strong>Ocre Tee</strong></td>
+                <td>337</td>
+                <td>291</td>
+                <td>166</td>
+                <td>309</td>
+                <td>136</td>
+                <td>518</td>
+                <td>348</td>
+                <td>383</td>
+                <td>459</td>
+                <td>3,147</td>
+                <td>6,031</td>
+            </tr>
+            <tr>
+                <td><strong>Men's Handicap</strong></td>
+                <td>11</td>
+                <td>7</td>
+                <td>13</td>
+                <td>3</td>
+                <td>17</td>
+                <td>9</td>
+                <td>5</td>
+                <td>1</td>
+                <td>15</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Men's Par</strong></td>
+                <td>4</td>
+                <td>4</td>
+                <td>3</td>
+                <td>4</td>
+                <td>3</td>
+                <td>5</td>
+                <td>4</td>
+                <td>4</td>
+                <td>5</td>
+                <td>36</td>
+                <td>71</td>
+            </tr>
+            <tr>
+                <td><strong>{{this.username}}</strong></td>
+                <td><input type="number" name="strokes10" min="1" /></td>
+                <td><input type="number" name="strokes11" min="1" /></td>
+                <td><input type="number" name="strokes12" min="1" /></td>
+                <td><input type="number" name="strokes13" min="1" /></td>
+                <td><input type="number" name="strokes14" min="1" /></td>
+                <td><input type="number" name="strokes15" min="1" /></td>
+                <td><input type="number" name="strokes16" min="1" /></td>
+                <td><input type="number" name="strokes17" min="1" /></td>
+                <td><input type="number" name="strokes18" min="1" /></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <button id="create-button" type="submit">create</button>
+    </form>
+</div>
+
 <style>
     th,
     td {

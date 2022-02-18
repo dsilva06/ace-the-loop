@@ -1,27 +1,49 @@
-<h1>Score</h1>
-<button id="button-add"><a href="/scoresheet/create">Add Scoresheet</a></button>
-{{#each scoresheets}}
-<table>
-    <th>Hole</th>
-    <tr>{{#each this.holes}}
-        <td>{{this}}</td>
-        {{/each}}
-    </tr>
-    <th>Par</th>
-    <tr>
-        {{#each this.par}}
-        <td>{{this}}</td>
-        {{/each}}
-    </tr>
-    <th>Strokes</th>
-    <tr>
-        {{#each this.strokes}}
-        <td>{{this}}</td>
-        {{/each}}
-    </tr>
+<div class="list">
+    <h1>Score</h1>
+    <a href="/scoresheet/create">Add Scoresheet</a>
+    {{#each scoresheets}}
+    <table>
+        <tr>
+            <th>Hole</th>
+            {{#each this.holes}}
+
+            <td>{{this}}</td>
+            {{/each}}
+        </tr>
+
+        <tr>
+            <th>Par</th>
+            {{#each this.par}}
+            <td>{{this}}</td>
+            {{/each}}
+        </tr>
+
+        <tr>
+            <th>Strokes</th>
+            {{#each this.strokes}}
+            <td>{{this}}</td>
+            {{/each}}
+            <th>Total</th>
+            <td></td>
+        </tr>
 
 
-</table>
-<button id="edit-button"><a href="/scoresheet/{{this._id}}/edit">Edit scoresheet</a></button>
- <form action="/scoresheet/{{this.scoreSheetID}}/remove" method="POST"><button id="delete-button" type="submit">Delete</button></form>
-{{/each}}
+    </table>
+    <a href="/scoresheet/{{this._id}}/edit">Edit scoresheet</a>
+    <form action="/scoresheet/{{this._id}}/remove" method="POST"><button id="delete-button"
+            type="submit">Delete</button></form>
+    {{/each}}
+</div>
+<style>
+    th,
+    tr,
+    td {
+        border: 1px black solid;
+        color: white;
+        padding: 10px;
+    }
+
+    h1{
+        color: white;
+    }
+</style>

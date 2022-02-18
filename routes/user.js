@@ -101,10 +101,6 @@ router.post("/login", (req, res) => {
   });
 });
 
-// router.get("user/home",(req, res)=>{
-//   res.render("users/home")
-// });
-
 router.get("/logout", (req, res)=>{
     req.session.destroy();
     console.log("This session is over", req.session)

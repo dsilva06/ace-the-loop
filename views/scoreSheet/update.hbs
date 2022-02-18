@@ -1,11 +1,10 @@
+<div class="update">
+    <h2>Change Scoresheet {{name}} info</h2>
 
-<h2>Change Scoresheet {{name}} info</h2>
-
-<form method="POST" action="/scoresheet/{{this.scoreSheetID}}/edit">
-{{#each strokes}}
-<p>{{@index}}</p>
-    <input type="number" name="strokes{{@index}}" value={{this}}>
-    {{!-- <input type="number" name="par" value={{par}} > --}}
-{{/each}}
-    <button type="submit">Edit Scoresheet</button>
-</form>
+    <form method="POST" action="/scoresheet/{{this.scoreSheetID}}/edit">
+        {{#each strokes}}
+        <input type="number" name="strokes{{@index}}" value={{this}}>
+        {{/each}}
+        <button type="submit">Edit Scoresheet</button>
+    </form>
+</div>

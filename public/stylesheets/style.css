@@ -31,7 +31,7 @@ h1 {
 .signup-login{
   align-self: center;
 }
-.signup-login a{
+a{
   margin: 15px;
   padding: 5px;
   text-decoration: none;
@@ -93,14 +93,58 @@ h1 {
 .success-signup h1{
   color: #ffffff;
 }
-.success-signup a{
-  margin: 15px;
-  padding: 5px;
-  text-decoration: none;
+
+.home-page h1{
+  color: white;
+}
+.create{
+  background-color: white;
+}
+table{
+  margin: 25px;
+  padding: 15px;
+  text-align: center;
+}
+
+button{
+  margin: 25px;
   color: #ffffff;
   font-size: 25px;
-  border: 5px solid gold;
+  border: 3px solid gold;
   background-color: #00a428;
   border-radius: 10px;
+  padding: 10px;
+}
+#create-button:hover{
+  background-color:  #ffffff;
+  color: #00a428;
+  border: #00a428 3px solid;
+}
+.update{
+  width: 25%;
+}
+.update h2{
+  color: white;
+  font-size: 2rem;
+}
+.update form{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.update input{
+
+    width: 100px;
+    height: 20px;
+    margin: 15px;
+    background-color: #00a428;
+    border: solid 3px gold;
+    border-radius: 5px;
+  
+}
+.weather{
+  color: white;
 }
 
