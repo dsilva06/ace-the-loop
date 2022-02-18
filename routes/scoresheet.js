@@ -10,6 +10,12 @@ router.get("/record", (req, res, next) => {
   .populate("playerID")
   .then((allSheets) => {
     console.log(allSheets);
+    for (let i = 0; i < allSheets.length; i++) {
+      allSheets [i].total = allSheets[i].strokes.reduce((a,b)=> a + b, 0)
+      allSheets [i].parTotal = allSheets[i].par.reduce((a,b)=> a + b, 0)
+      allSheets[i].overPar = allSheets[i].total - allSheets[i].parTotal
+    }
+
       res.render("scoreSheet/list", { scoresheets: allSheets});
     })
     .catch((err) => {
@@ -18,7 +24,7 @@ router.get("/record", (req, res, next) => {
 });
 
 router.get("/create", (req, res, next) => {
-  res.render("scoresheet/create");
+  res.render("scoreSheet/create");
 });
 router.post("/create", isLoggedIn, (req, res, next) => {
   const strokes = [
@@ -81,7 +87,7 @@ router.get("/:id/edit", (req, res, next) => {
   Scoresheet.findById( req.params.id)
     .then((results) => {
       console.log("We found this Scoresheet", results);
-      res.render("scoresheet/update", {
+      res.render("scoreSheet/update", {
         strokes: strokes,
         par: par,
         holes: holes,
@@ -135,7 +141,7 @@ router.post("/:id/remove", (req, res, next) => {
   Scoresheet.findByIdAndRemove(req.params.id)
     .then((results) => {
       console.log("Scoresheet", results);
-      res.redirect("/record");
+      res.redirect("/scoresheet/record");
     })
     .catch((err) => {
       console.log("Something went wrong:", err);

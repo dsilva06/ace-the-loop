@@ -100,11 +100,13 @@ router.post("/login", (req, res) => {
       res.json(err);
   });
 });
-
+router.get("/home", (req, res, next) => {
+  res.render("users/home");
+});
 router.get("/logout", (req, res)=>{
     req.session.destroy();
     console.log("This session is over", req.session)
-    res.json("You have logged out");
+    res.render("users/login");
 })
 
 module.exports = router;

@@ -1,5 +1,6 @@
 <div class="list">
     <h1>Score</h1>
+    <a href="/user/home">Go Back</a>
     <a href="/scoresheet/create">Add Scoresheet</a>
     {{#each scoresheets}}
     <table>
@@ -9,6 +10,8 @@
 
             <td>{{this}}</td>
             {{/each}}
+            <th>Total</th>
+            <th>Score</th>
         </tr>
 
         <tr>
@@ -16,6 +19,9 @@
             {{#each this.par}}
             <td>{{this}}</td>
             {{/each}}
+            <td>{{this.parTotal}}</td>
+            <td></td>
+
         </tr>
 
         <tr>
@@ -23,8 +29,9 @@
             {{#each this.strokes}}
             <td>{{this}}</td>
             {{/each}}
-            <th>Total</th>
-            <td></td>
+            
+            <td>{{this.total}}</td>
+            <td>{{this.overPar}}</td>
         </tr>
 
 
@@ -33,12 +40,13 @@
     <form action="/scoresheet/{{this._id}}/remove" method="POST"><button id="delete-button"
             type="submit">Delete</button></form>
     {{/each}}
+    
 </div>
 <style>
     th,
     tr,
     td {
-        border: 1px black solid;
+        border: 1px white solid;
         color: white;
         padding: 10px;
     }
